@@ -1,0 +1,56 @@
+.profile {
+  &-details {
+    row-gap: 4rem;
+
+    &__field {
+      color: $primary-color;
+      opacity: 0.6;
+      font-size: $default-font-size;
+      margin-bottom: 0.5rem;
+    }
+    &__value {
+      color: $primary-color;
+      font-size: 1.8rem;
+    }
+  }
+  &-button {
+    &--edit {
+      height: 4rem;
+    }
+  }
+}
+
+.section {
+  background-color: $background-white;
+  padding: 3rem;
+  border-radius: 1rem;
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+
+.square {
+  width: 4rem;
+  height: 2rem;
+  margin-right: 2rem;
+  &--blue {
+    background-color: #b3d4ff;
+  }
+  &--red {
+    background-color: #e60049;
+  }
+  &--green {
+    background-color: #50e991;
+  }
+}
+.chart {
+  &-info {
+    display: flex;
+    align-items: center;
+  }
+  &__label {
+    color: $primary-color;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+}

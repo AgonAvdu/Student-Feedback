@@ -1,0 +1,15 @@
+.subject {
+  &-form {
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    &-row {
+      display: flex;
+      gap: 4rem;
+    }
+    &__input {
+      width: 40rem;
+      height: 3.8rem;
+    }
+  }
+}

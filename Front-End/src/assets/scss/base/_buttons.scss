@@ -1,0 +1,70 @@
+.button {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $default-font-size;
+  font-weight: 600;
+  font-family: $font-hind-vadodara;
+  border-radius: 4px;
+  text-decoration: none;
+
+  @include respond(small) {
+    border-radius: 0px;
+  }
+
+  &:hover {
+    box-shadow: 2px 4px 5px #00000055;
+    color: white;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  &__primary {
+    color: white;
+    background-color: $secondary-color;
+    border: $secondary-border;
+
+    @include respond(small) {
+      border-radius: 0px;
+    }
+  }
+  &__secondary {
+    color: #0062ae;
+    background-color: white;
+
+    border: 1px solid #0062ae;
+  }
+  &__tertiary {
+    border: none;
+    color: $text-primary-color;
+    background-color: #fafafa;
+  }
+  &__logout {
+    border: none;
+    background-color: #f40;
+    font-weight: 600;
+    color: #fff;
+    &:hover {
+      background-color: rgb(255, 38, 0);
+    }
+  }
+  &__edit {
+    border: none;
+    background-color: $secondary-color;
+    font-weight: 600;
+    color: #fff;
+    &:hover {
+      background-color: lighten($color: $secondary-color, $amount: 5%);
+    }
+
+    &-icon {
+      width: 2rem;
+      margin-right: 1rem;
+    }
+  }
+}

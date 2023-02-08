@@ -1,0 +1,314 @@
+.dashboard {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  @include respond(small) {
+    flex-direction: column;
+  }
+  &__sidebar {
+    min-width: 28rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.4rem 1.6rem;
+    box-sizing: border-box;
+    border-right: 1px solid #00000022;
+    @include respond(medium) {
+      min-width: 5vw;
+      transition: all 0.2s;
+      padding: 1.2rem 0 1.2rem 0.8rem;
+      overflow-x: hidden;
+    }
+    @include respond(small) {
+      width: 100%;
+      padding: 0;
+      height: auto;
+      min-height: 5rem;
+      position: relative;
+      overflow: visible;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__bottom,
+  &__top {
+    width: 100%;
+  }
+  &__main {
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    overflow: hidden;
+
+  }
+  &__content {
+    width: 100%;
+    height: calc(100% - 6rem);
+    overflow-y: scroll;
+
+    padding: 3rem 4rem 3.2rem 4rem;
+    @include respond(medium) {
+      padding: 3.5rem 1.8rem 1.2rem 1.8rem;
+    }
+  }
+  &-topBar {
+    width: 100%;
+    height: 6rem;
+    background-color: $background-white;
+    box-shadow: $primary-box-shadow;
+    margin: 0 !important;
+    position: relative;
+  }
+  &-user {
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+    color: $primary-color;
+    margin-right: 4rem;
+    cursor: pointer;
+    &:hover {
+      color: $secondary-color;
+      
+    }
+    &:hover > &__icon {
+      filter: invert(26%) sepia(85%) saturate(1592%) hue-rotate(186deg) brightness(90%) contrast(103%);
+    }
+    &__icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: 0 1rem;
+    }
+    &__label {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    &-container {
+      padding: 1.1rem;
+      margin-bottom: 8rem;
+      height: 10rem;
+      display: flex;
+      justify-content: center;
+      @include respond(medium) {
+        margin-bottom: 4rem;
+        height: 8rem;
+      }
+      @include respond(small) {
+        height: 6rem;
+        align-items: center;
+        margin-bottom: 0rem;
+        padding: 0;
+      }
+    }
+  }
+  &__nav {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    @include respond(small) {
+      display: none;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 1.1rem 1.6rem;
+    overflow: hidden;
+    @include respond(medium) {
+      justify-content: center;
+      padding: 1.1rem 0.4rem;
+    }
+    @include respond(small) {
+      justify-content: flex-start;
+    }
+
+    &-active {
+      background-color: rgba(0, 98, 174, 0.05);
+    }
+
+    &--image {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-right: 0.8rem;
+      filter: brightness(0) saturate(100%) invert(25%) sepia(0%) saturate(779%)
+        hue-rotate(137deg) brightness(104%) contrast(87%);
+      transition: all 0.2s;
+      @include respond(medium) {
+        margin-right: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+      @include respond(small) {
+        margin-right: 1rem;
+      }
+    }
+    &-active > &--image {
+      filter: brightness(0) saturate(100%) invert(19%) sepia(100%)
+        saturate(2416%) hue-rotate(192deg) brightness(93%) contrast(101%);
+      opacity: 1;
+    }
+
+    &--label {
+      font-size: 1.6rem;
+      line-height: 1.8rem;
+      color: $text-primary-color;
+      white-space: wrap;
+
+      @include respond(medium) {
+        display: none;
+      }
+      @include respond(small) {
+        display: block;
+      }
+    }
+    &-active > &--label {
+      color: $text-secondary-color;
+    }
+  }
+  &__logout-container {
+    padding: 0 0.8rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    @include respond(medium) {
+      padding: 0;
+    }
+    @include respond(small) {
+      display: none;
+    }
+    &-hide {
+      display: none;
+    }
+  }
+  &__logout {
+    width: 100%;
+    height: 100%;
+    @include respond(medium) {
+      border-radius: 0 !important ;
+    }
+    &-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: none;
+      @include respond(medium) {
+        display: block;
+      }
+    }
+    &-label {
+      @include respond(medium) {
+        display: none;
+      }
+    }
+  }
+
+  &__header {
+    @include respond(small) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 0.5rem 1rem 0 1rem;
+    }
+  }
+
+  &__mobile {
+    &-checkbox {
+      display: none;
+    }
+    &-logout {
+      padding: 1.1rem 1.6rem;
+    }
+
+    &-button {
+      display: none;
+      @include respond(small) {
+        width: 1rem;
+        height: 100%;
+        margin-top: 1rem;
+        display: block;
+        box-shadow: 0 1rem 3rem rgba(#000, 0.1);
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    &-nav {
+      display: none;
+      @include respond(small) {
+        position: absolute;
+        height: 93.1vh;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0000004d;
+        z-index: 1000;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        opacity: 0;
+        transition: opacity 0.2s ease-out;
+      }
+    }
+    &-navItems {
+      background-color: white;
+    }
+
+    &-checkbox:checked ~ &-nav {
+      @include respond(small) {
+        display: block;
+
+        max-height: 100vh;
+        opacity: 1;
+        transition: opacity 0.2s ease-out;
+      }
+    }
+    &-icon {
+      position: relative;
+      &,
+      &::before,
+      &::after {
+        width: 3rem;
+        height: 2px;
+        background-color: $secondary-color;
+        display: inline-block;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all 0.2s;
+      }
+
+      &::before {
+        top: -0.8rem;
+      }
+      &::after {
+        top: 0.8rem;
+      }
+    }
+
+    &-button:hover &-icon::before {
+      top: -1rem;
+    }
+    &-button:hover &-icon::after {
+      top: 1rem;
+    }
+
+    &-checkbox:checked + &-button &-icon {
+      background-color: transparent;
+    }
+    &-checkbox:checked + &-button &-icon::after {
+      transform: rotate(135deg);
+      top: 0;
+    }
+    &-checkbox:checked + &-button &-icon::before {
+      transform: rotate(-135deg);
+      top: 0;
+    }
+  }
+}
